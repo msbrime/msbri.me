@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	Salis Braimah
+	</title>
+	<link rel="stylesheet" type="text/css" href="vendor/jsgauge/gauge.css">
+	<link rel="stylesheet" type="text/css" href="build/css/main.css">
+</head>
+<body>
+
+<div id = "header" class="fw header">
+	
+</div>
+
+<div class="fw section hero">
+
+	<div id ="hero-left" class="hw bg-primary hero__tile hero__tile-full">
+		
+	</div>
+
+	<div id ="hero-right" class="hw hero__tile hero__tile-full bg-white">
+		
+	</div>
+	
+</div>
+
+<div id = "gauges" class = "fw section">
+
+	<div class="medium-12 columns ">
+
+
+			<div class ="gauge-container">
+
+				<div id = "js_gauge"  class="small-gauge gauge">
+					
+				</div>
+
+				<span class = "led"></span>
+			
+			</div>
+
+			<div id = "main_gauge"  class="big-gauge gauge">
+				
+			</div>
+
+			<div class ="gauge-container">
+				
+				<div id = "php_gauge"  class="small-gauge gauge">
+					
+				</div>	
+			
+			</div>
+	
+	</div>
+
+
+</div>
+
+
+<script type="text/javascript" src = "vendor/jsgauge/jsgauge.js"></script>
+
+<script type="text/javascript">
+
+(function(){
+	
+		var js = jsGauge.init("#js_gauge",{startAngle:150,arcDistance:240,pointCount:70}).move(90);
+
+		var php = jsGauge.init("#php_gauge",{startAngle:150,arcDistance:240,pointCount:70}).move(90);
+
+		var main = jsGauge.init("#main_gauge",{startAngle:150,arcDistance:240,pointCount:70}).move(90);
+
+})();
+
+</script>
+
+</body>
+</html>

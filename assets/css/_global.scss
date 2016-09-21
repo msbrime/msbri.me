@@ -1,0 +1,132 @@
+body{
+
+	min-height:100%;
+
+}
+
+.fw{
+
+	width : 100%;
+
+}
+
+.hw{
+
+	width: 50%;
+	min-width : 50%;
+}
+
+.tw{
+
+	width: 33.333%;
+}
+
+.bg-primary{
+
+	background-color: $primary_color;
+
+}
+
+.bg-white{
+
+	background-color: $white;
+
+}
+
+
+.hero{
+
+	min-height:100%;
+	width:100%;
+	display:table;
+
+	&__tile{
+
+		
+		&-full{
+
+			display: table-cell;
+
+		}
+	
+	}
+
+}
+
+
+#hero-left{
+	background-image: url(../images/yellow_desk.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size: 70% auto;
+}
+
+
+#gauges{
+
+	padding : 30px;
+	text-align:center;
+}
+
+.small-gauge{
+	width : $small_gauge;
+	height:$small_gauge;
+
+}
+
+.big-gauge{
+	width : $big_gauge;
+	height: $big_gauge;
+}
+
+.gauge{
+	display:inline-block;
+}
+
+
+.gauge-container{
+	width : $small_gauge + 14px;
+	height : $big_gauge;
+	display : inline-block;
+	vertical-align : top;
+}
+
+
+.led{
+	display:inline-block;
+	width:30px;
+	height:30px;
+	border-radius : 100%;
+	background-color:#ccc;
+
+	&::after{
+		content : "";
+		display:inline-block;
+		width:22px;
+		height:22px;
+		border-radius:100%;
+		margin:3px 4px;
+background-color:lighten($primary_color,10%);
+		box-shadow:inset 0px 3px 0px 1px rgba(#fff,0.3), 
+				   0px 1px 0px 1px rgba(#000,.15),
+				   0px 0px 5px 5px rgba(lighten($primary_color,10%),0.5);
+		*animation : blink 3s infinite;
+		transition : all .5s;
+	}
+}
+
+
+@keyframes blink{
+
+	0%,100%{
+		background-color:$primary_color;
+		box-shadow:inset 0px 3px 0px 1px rgba(#fff,0.6), 0px 1px 0px 1px rgba(#000,.15);
+	}
+	50%{
+		background-color:lighten($primary_color,10%);
+		box-shadow:inset 0px 3px 0px 1px rgba(#fff,0.3), 
+				   0px 1px 0px 1px rgba(#000,.15),
+				   0px 0px 5px 5px rgba(lighten($primary_color,10%),0.5);
+	}
+
+}
