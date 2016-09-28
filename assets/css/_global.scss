@@ -1,60 +1,53 @@
-body{
-
+body
+{
 	min-height:100%;
-
 }
 
-.fw{
-
+.full-width
+{
 	width : 100%;
-
 }
 
-.hw{
-
+.half-width
+{
 	width: 50%;
 	min-width : 50%;
 }
 
-.tw{
-
+.third-width
+{
 	width: 33.333%;
 }
 
-.bg-primary{
-
+.bg-primary
+{
 	background-color: $primary_color;
-
 }
 
-.bg-white{
-
+.bg-white
+{
 	background-color: $white;
-
 }
 
 
-.hero{
-
+.hero
+{
 	min-height:100%;
 	width:100%;
 	display:table;
 
-	&__tile{
-
-		
-		&-full{
-
+	&__tile
+  {	
+		&--full
+    {
 			display: table-cell;
-
 		}
-	
 	}
-
 }
 
 
-#hero-left{
+#hero-left
+{
 	background-image: url(../images/yellow_desk.png);
 	background-position:center;
 	background-repeat:no-repeat;
@@ -62,8 +55,8 @@ body{
 }
 
 
-#gauges{
-
+#gauges
+{
 	padding : 30px;
 	text-align:center;
 }
@@ -81,6 +74,7 @@ body{
 
 .gauge{
 	display:inline-block;
+	background: $site_grey;
 }
 
 
@@ -91,42 +85,48 @@ body{
 	vertical-align : top;
 }
 
-
-.led{
-	display:inline-block;
-	width:30px;
-	height:30px;
-	border-radius : 100%;
-	background-color:#ccc;
-
-	&::after{
-		content : "";
-		display:inline-block;
-		width:22px;
-		height:22px;
-		border-radius:100%;
-		margin:3px 4px;
-background-color:lighten($primary_color,10%);
-		box-shadow:inset 0px 3px 0px 1px rgba(#fff,0.3), 
-				   0px 1px 0px 1px rgba(#000,.15),
-				   0px 0px 5px 5px rgba(lighten($primary_color,10%),0.5);
-		*animation : blink 3s infinite;
-		transition : all .5s;
+.indicator{
+    text-align:left;
+    margin-bottom: 10px;
+    
+    &__led{
+       
+        &--yellow
+        {
+		@include led(25px,$primary_color);
 	}
+
+	&--red
+        {
+		@include led(25px,rgb(183,50,50));
+		*animation : blink 3s infinite;
+	}
+        
+    }
+    
+    &__text
+    {
+        font-size: 0.9em;
+        vertical-align:super;
+    }
+    
+    
+        
 }
 
 
-@keyframes blink{
-
-	0%,100%{
-		background-color:$primary_color;
-		box-shadow:inset 0px 3px 0px 1px rgba(#fff,0.6), 0px 1px 0px 1px rgba(#000,.15);
-	}
-	50%{
-		background-color:lighten($primary_color,10%);
-		box-shadow:inset 0px 3px 0px 1px rgba(#fff,0.3), 
-				   0px 1px 0px 1px rgba(#000,.15),
-				   0px 0px 5px 5px rgba(lighten($primary_color,10%),0.5);
-	}
-
+@keyframes blink
+{
+    0%,100%
+    {
+            background-color:#a00202;
+            box-shadow:inset 0px 3px 0px 1px rgba(#fff,0.1), 0px 1px 0px 1px rgba(#000,.15);
+    }
+    50%
+    {
+            background-color:lighten(#a00202,10%);
+            box-shadow:inset 0px 3px 0px 1px rgba(#fff,0.1), 
+                                   0px 1px 0px 1px rgba(#000,.15),
+                                   0px 0px 5px 5px rgba(lighten(#a00202,10%),0.5);
+    }
 }

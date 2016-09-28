@@ -1,0 +1,33 @@
+@mixin led($size,$color)
+{
+	display:inline-block;
+	width:$size;
+	height:$size;
+	border-radius : 100%;
+	background-color:#ccc;
+
+	&::after
+	{
+		content : "";
+		display:inline-block;
+		width:$size - 8px;
+		height:$size - 8px;
+		border-radius:100%;
+		margin:3px 4px;
+		background-color:lighten($color,10%);
+		box-shadow:inset 0px 3px 0px 1px rgba(#fff,0.1), 
+				   		 0px 1px 0px 1px rgba(#000,.5);
+		
+		transition : all .5s;
+	}
+
+	&--on
+	{
+		&::after
+		{
+			box-shadow:inset 0px 3px 0px 1px rgba(#fff,0.1), 
+			   		 0px 1px 0px 1px rgba(#000,.5),
+			       0px 0px 5px 5px rgba(lighten($color,10%),0.5);
+		}
+	}
+}

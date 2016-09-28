@@ -67,4 +67,3 @@ gulp.task('default',['sass','js'],function(){
     //Watch the css folder
     gulp.watch(css.watch,['sass']);
 });
-
