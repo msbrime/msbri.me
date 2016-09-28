@@ -37,14 +37,13 @@ body
 	display:table;
 
 	&__tile
-  {	
+  	{	
 		&--full
-    {
+    	{
 			display: table-cell;
 		}
 	}
 }
-
 
 #hero-left
 {
@@ -54,29 +53,29 @@ body
 	background-size: 70% auto;
 }
 
-
 #gauges
 {
 	padding : 30px;
 	text-align:center;
 }
 
-.small-gauge{
-	width : $small_gauge;
-	height:$small_gauge;
-
-}
-
-.big-gauge{
-	width : $big_gauge;
-	height: $big_gauge;
-}
-
-.gauge{
+.gauge
+{
 	display:inline-block;
 	background: $site_grey;
-}
+	
+	&--small
+	{
+		width : $small_gauge;
+		height: $small_gauge;
+	}
 
+	&--large
+	{
+		width : $big_gauge;
+		height: $big_gauge;
+	}
+}
 
 .gauge-container{
 	width : $small_gauge + 14px;
@@ -89,18 +88,28 @@ body
     text-align:left;
     margin-bottom: 10px;
     
-    &__led{
+    &__led
+    {
        
         &--yellow
         {
-		@include led(25px,$primary_color);
-	}
+		  @include led(25px,$primary_color);
+		  
+		  &::after 
+		  {
+			
+		  }	
+		}
 
-	&--red
-        {
-		@include led(25px,rgb(183,50,50));
-		*animation : blink 3s infinite;
-	}
+		&--red
+	    {
+			@include led(25px,rgb(183,50,50));
+			
+			&::after 
+			{
+				animation : blink 3s infinite;
+			}			
+		}
         
     }
     
@@ -109,9 +118,7 @@ body
         font-size: 0.9em;
         vertical-align:super;
     }
-    
-    
-        
+
 }
 
 
@@ -119,14 +126,13 @@ body
 {
     0%,100%
     {
-            background-color:#a00202;
-            box-shadow:inset 0px 3px 0px 1px rgba(#fff,0.1), 0px 1px 0px 1px rgba(#000,.15);
+        box-shadow:inset 0px 3px 0px 1px rgba(#fff,0.05),
+        		   0px 1px 0px 1px rgba(#000,.5);
     }
     50%
     {
-            background-color:lighten(#a00202,10%);
-            box-shadow:inset 0px 3px 0px 1px rgba(#fff,0.1), 
-                                   0px 1px 0px 1px rgba(#000,.15),
-                                   0px 0px 5px 5px rgba(lighten(#a00202,10%),0.5);
+        box-shadow:inset 0px 3px 0px 1px rgba(#fff,0.05), 
+                   0px 1px 0px 1px rgba(#000,.5),
+                   0px 0px 5px 5px rgba(lighten(#a00202,10%),0.5);
     }
 }
