@@ -33,35 +33,61 @@
 
      <div class ="gauge-container">
 
-        <div id = "javascript_gauge"  class="gauge gauge--small">
-
+        <div id = "javascript_gauge"  class="gauge gauge--small" style = 'left:70px;'>
         </div>
-
-         <div class = "indicator">
-             <span class ="indicator__led indicator__led--yellow" ></span>
-             <span class ="indicator__text" >Javscript</span>
-         </div>
-
-        <div class = "indicator">
-            <span class ="indicator__led indicator__led--red" ></span>
-            <span class ="indicator__text">Canvas</span>
+         
+        <div id = "mobile_gauge"  class="gauge gauge--small" style = 'left:70px'>
         </div>
 
     </div>
 
     <div id = "overall_gauge"  class="gauge gauge--large">
-
     </div>
 
     <div class ="gauge-container">
-
-      <div id = "php_gauge"  class="gauge gauge--small">
-
+        
+      <div id = "php_gauge"  class="gauge gauge--small" style = 'left:-70px' >
       </div>	
+        
+      <div id = "design_gauge"  class="gauge gauge--small" style = 'left:-70px;'>
+      </div>
 
     </div>
 
   </div>
+      
+      <div class = 'medium-12 columns indicators'>
+        
+        <span class = "indicator">
+             <span class ="indicator__led indicator__led--yellow indicator__led--yellow--on" ></span>
+             <span class ="indicator__text" >html</span>
+        </span>
+          
+        <span class = "indicator">
+             <span class ="indicator__led indicator__led--yellow indicator__led--yellow--on" ></span>
+             <span class ="indicator__text" >css</span>
+        </span>
+
+        <span class = "indicator">
+            <span class ="indicator__led indicator__led--yellow indicator__led--yellow--on" ></span>
+            <span class ="indicator__text">Js</span>
+        </span>
+          
+        <span class = "indicator">
+             <span class ="indicator__led indicator__led--yellow indicator__led--yellow--on" ></span>
+             <span class ="indicator__text" >php</span>
+        </span>
+          
+        <span class = "indicator">
+             <span class ="indicator__led indicator__led--red indicator__led--red" ></span>
+             <span class ="indicator__text" >java</span>
+        </span>
+          
+        <span class = "indicator">
+             <span class ="indicator__led indicator__led--yellow indicator__led--yellow--on" ></span>
+             <span class ="indicator__text" >sql</span>
+        </span>
+      </div>
 
 
 </div>
@@ -75,18 +101,28 @@
 
     var javascriptGauge = jsGauge.init(
                                        "#javascript_gauge",
+                                       {startAngle:120,arcDistance:200,pointCount:70}
+                                       ).move(90);
+    
+        var mobileGauge = jsGauge.init(
+                                       "#mobile_gauge",
+                                       {startAngle:150,arcDistance:240,pointCount:70}
+                                       ).move(90);
+        
+         var designGauge = jsGauge.init(
+                                       "#design_gauge",
                                        {startAngle:150,arcDistance:240,pointCount:70}
                                        ).move(90);
 
     var phpGauge = jsGauge.init(
                                 "#php_gauge",
                                 {startAngle:150,arcDistance:240,pointCount:70}
-                                ).move(90);
+                                ).move(80);
 
     var overallGauge = jsGauge.init(
                                     "#overall_gauge",
                                     {startAngle:150,arcDistance:240,pointCount:70}
-                                   ).move(90);
+                                   ).move(70);
     
   })();
 

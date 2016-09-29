@@ -63,17 +63,20 @@ body
 {
 	display:inline-block;
 	background: $site_grey;
+        position : relative;
 	
 	&--small
 	{
 		width : $small_gauge;
 		height: $small_gauge;
+                z-index:1;
 	}
 
 	&--large
 	{
 		width : $big_gauge;
 		height: $big_gauge;
+                z-index:2;
 	}
 }
 
@@ -82,18 +85,28 @@ body
 	height : $big_gauge;
 	display : inline-block;
 	vertical-align : top;
+        
 }
 
+.indicators{
+    padding: 30px 0;
+}
+
+
 .indicator{
-    text-align:left;
+    text-align:center;
     margin-bottom: 10px;
+    display:inline-block;
+    width  :100px;
     
     &__led
     {
+        
+        
        
         &--yellow
         {
-		  @include led(25px,$primary_color);
+		  @include led(40px,$primary_color);
 		  
 		  &::after 
 		  {
@@ -103,11 +116,11 @@ body
 
 		&--red
 	    {
-			@include led(25px,rgb(183,50,50));
+			@include led(40px,rgb(183,50,50));
 			
 			&::after 
 			{
-				animation : blink 3s infinite;
+				animation : blink 1.5s infinite;
 			}			
 		}
         
@@ -115,8 +128,11 @@ body
     
     &__text
     {
-        font-size: 0.9em;
+        font-size: 0.8em;
         vertical-align:super;
+        text-transform: uppercase;
+        display: inline-block;
+        width: 100%;
     }
 
 }
