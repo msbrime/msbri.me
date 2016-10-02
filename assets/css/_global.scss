@@ -1,6 +1,7 @@
 body
 {
 	min-height:100%;
+        font-family:'Segoe UI';
 }
 
 .full-width
@@ -96,28 +97,44 @@ body
     
     &__led
     {
-        
-        
        
         &--yellow
         {
-		  @include led(40px,$primary_color);
-		  
-		  &::after 
-		  {
-			
-		  }	
-		}
+          @include led(40px,$primary_color);
+          
+          &-blink
+          {
+                &::after 
+                {
+                    animation : blink 1.5s infinite;
+                }  
+          }
 
-		&--red
-	    {
-			@include led(40px,rgb(183,50,50));
-			
-			&::after 
-			{
-				animation : blink 1.5s infinite;
-			}			
-		}
+        }
+
+        &--green
+        {
+          @include led(40px,#33ff00);
+          
+          &-blink
+          {
+                &::after 
+                {
+                    animation : blink 1.5s infinite;
+                }  
+          }
+
+        }
+
+	&--red
+        {
+            @include led(40px,rgb(183,50,50));
+
+            &::after 
+            {
+                animation : blink 3s infinite;
+            }			
+        }
         
     }
     
@@ -132,18 +149,26 @@ body
 
 }
 
+.wobble__90{
+    animation: wobble__90 .2s infinite;
+}
+
+
 
 @keyframes blink
 {
     0%,100%
     {
-        box-shadow:inset 0px 3px 0px 1px rgba(#fff,0.05),
-        		   0px 1px 0px 1px rgba(#000,.5);
+        @include led-state__off;
     }
     50%
     {
-        box-shadow:inset 0px 3px 0px 1px rgba(#fff,0.05), 
-                   0px 1px 0px 1px rgba(#000,.5),
-                   0px 0px 5px 5px rgba(lighten(#a00202,10%),0.5);
+        @include led-state__on($primary_color);
     }
+    
+}
+
+@keyframes wobble__90
+{
+    @include wobble();
 }

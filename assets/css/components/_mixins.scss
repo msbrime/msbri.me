@@ -36,5 +36,15 @@
 	box-shadow:inset 5px 0px 0px 1px rgba(#fff,0.4), 
 			   0px 1px 0px 1px rgba(#000,0.5),
                            0px 0px 3px 3px rgba(lighten($color,5%),0.8),
-			   0px 0px 6px 6px rgba(lighten($color,10%),0.5);	
+			   0px 2px 6px 6px rgba(lighten($color,10%),0.5);	
+}
+
+@mixin wobble($angle:90)
+{
+    	0%,100%{
+		transform:rotate($angle + deg);
+	}
+	50%{
+		transform:rotate(($angle + 2) + deg);
+	}
 }

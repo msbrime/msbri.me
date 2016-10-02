@@ -36,7 +36,7 @@
         <div id = "javascript_gauge"  class="gauge gauge--small" style = ''>
         </div>
          
-        <div id = "mobile_gauge"  class="gauge gauge--small" style = ''>
+        <div id = "mobile_gauge"  class="gauge gauge--small" style = 'left:-150px'>
         </div>
 
     </div>
@@ -49,7 +49,7 @@
       <div id = "php_gauge"  class="gauge gauge--small" style = '' >
       </div>	
         
-      <div id = "design_gauge"  class="gauge gauge--small" style = ''>
+      <div id = "design_gauge"  class="gauge gauge--small" style = 'left:150px'>
       </div>
 
     </div>
@@ -79,14 +79,20 @@
         </span>
           
         <span class = "indicator">
-             <span class ="indicator__led indicator__led--red indicator__led--red" ></span>
-             <span class ="indicator__text" >java</span>
+             <span class ="indicator__led indicator__led--yellow indicator__led--yellow--on" ></span>
+             <span class ="indicator__text" >sql</span>
         </span>
           
         <span class = "indicator">
              <span class ="indicator__led indicator__led--yellow indicator__led--yellow--on" ></span>
-             <span class ="indicator__text" >sql</span>
+             <span class ="indicator__text" >java</span>
         </span>
+          
+        <span class = "indicator">
+             <span class ="indicator__led indicator__led--yellow indicator__led--yellow-blink" ></span>
+             <span class ="indicator__text" >android</span>
+        </span>
+          
       </div>
 
 
@@ -101,7 +107,7 @@
 
     var javascriptGauge = jsGauge.init(
                                        "#javascript_gauge",
-                                       {startAngle:120,arcDistance:200,pointCount:70}
+                                       {startAngle:150,arcDistance:240,pointCount:70}
                                        ).move(90);
     
         var mobileGauge = jsGauge.init(
