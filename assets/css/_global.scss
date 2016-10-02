@@ -53,11 +53,6 @@ body
 	background-size: 70% auto;
 }
 
-#gauges
-{
-	padding : 30px;
-	text-align:center;
-}
 
 .gauge
 {
@@ -70,6 +65,7 @@ body
 		width : $small_gauge;
 		height: $small_gauge;
                 z-index:1;
+                margin-bottom:30px;
 	}
 
 	&--large
@@ -81,8 +77,7 @@ body
 }
 
 .gauge-container{
-	width : $small_gauge + 14px;
-	height : $big_gauge;
+	width : $small_gauge + 114px;
 	display : inline-block;
 	vertical-align : top;
         
