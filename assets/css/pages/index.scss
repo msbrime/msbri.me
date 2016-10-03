@@ -10,7 +10,34 @@ and open the template in the editor.
 
 #gauges
 {
-	padding : 150px 0 50px;
-	text-align:center;
+    padding : 150px 0 50px;
+    text-align:center;
 }
 
+.hero
+{
+    min-height:100%;
+    width:100%;
+    display:table;
+
+    &__tile
+    {	
+        &--full
+        {
+            display: table-cell;
+        }
+    }
+}
+
+#hero-left
+{
+    background-image: url(../images/yellow_desk.png);
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size: 70% auto;
+}
+
+#portfolio
+{
+    height: 100%;
+}
