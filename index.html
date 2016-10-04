@@ -33,15 +33,15 @@
 
      <div class ="gauge-container">
 
-        <div id = "javascript_gauge"  class="gauge gauge--small" style = ''>
+        <div id = "front_end_gauge"  class="gauge gauge--small" style = ''>
             <div class = 'gauge__label'>
-              <p class = 'gauge__label-text'>design</p>
+              <p class = 'gauge__label-text'>front end</p>
             </div>
         </div>
          
-        <div id = "mobile_gauge"  class="gauge gauge--small" style = 'left:-150px'>
+        <div id = "design_gauge"  class="gauge gauge--small" style = 'left:-150px'>
             <div class = 'gauge__label'>
-              <p class = 'gauge__label-text'>development</p>
+              <p class = 'gauge__label-text'>design</p>
             </div>
         </div>
 
@@ -55,15 +55,15 @@
 
     <div class ="gauge-container">
         
-      <div id = "php_gauge"  class="gauge gauge--small" style = '' >
+      <div id = "back_end_gauge"  class="gauge gauge--small" style = '' >
             <div class = 'gauge__label'>
-              <p class = 'gauge__label-text'>test gauge</p>
+              <p class = 'gauge__label-text'>back end</p>
             </div>
       </div>	
         
-      <div id = "design_gauge"  class="gauge gauge--small" style = 'left:150px'>
+      <div id = "mobile_gauge"  class="gauge gauge--small" style = 'left:150px'>
             <div class = 'gauge__label'>
-              <p class = 'gauge__label-text'>test gauge</p>
+              <p class = 'gauge__label-text'>mobile</p>
             </div>
       </div>
 
@@ -133,30 +133,30 @@
 
   (function(){
 
-    var javascriptGauge = jsGauge.init(
-                                       "#javascript_gauge",
-                                       {startAngle:150,arcDistance:240,pointCount:70}
-                                       ).move(90);
+    var frontEndGauge = jsGauge.init(
+                                       "#front_end_gauge",
+                                       {startAngle:150,arcDistance:240,pointCount:40}
+                                       ).setValue(90);
     
         var mobileGauge = jsGauge.init(
                                        "#mobile_gauge",
-                                       {startAngle:150,arcDistance:240,pointCount:70}
-                                       ).move(90);
+                                       {startAngle:150,arcDistance:240,pointCount:40}
+                                       ).setValue(50);
         
          var designGauge = jsGauge.init(
                                        "#design_gauge",
-                                       {startAngle:150,arcDistance:240,pointCount:70}
-                                       ).move(90);
+                                       {startAngle:150,arcDistance:240,pointCount:40}
+                                       ).setValue(75);
 
-    var phpGauge = jsGauge.init(
-                                "#php_gauge",
-                                {startAngle:150,arcDistance:240,pointCount:70}
-                                ).move(80);
+    var backEndGauge = jsGauge.init(
+                                "#back_end_gauge",
+                                {startAngle:150,arcDistance:240,pointCount:40}
+                                ).setValue(80);
 
     var overallGauge = jsGauge.init(
                                     "#overall_gauge",
                                     {startAngle:150,arcDistance:240,pointCount:70}
-                                   ).move(70);
+                                   ).setValue(85);
     
   })();
 

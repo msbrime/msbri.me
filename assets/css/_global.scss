@@ -33,8 +33,12 @@ body
 .gauge
 {
 	display:inline-block;
-	background: $site_grey;
         position : relative;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+49,161616+84,ffffff+85,111111+87&1+0,0+100 */
+        background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%, rgba(255,255,255,0.51) 49%, rgba(22,22,22,0.16) 84%, rgba(255,255,255,0.15) 85%, rgba(17,17,17,0.13) 87%, rgba(17,17,17,0) 100%); /* FF3.6-15 */
+        background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.51) 49%,rgba(22,22,22,0.16) 84%,rgba(255,255,255,0.15) 85%,rgba(17,17,17,0.13) 87%,rgba(17,17,17,0) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: radial-gradient(ellipse at center,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.51) 49%,rgba(22,22,22,0.16) 84%,rgba(255,255,255,0.15) 85%,rgba(17,17,17,0.13) 87%,rgba(17,17,17,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00111111',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 	
 	&--small
 	{
@@ -45,7 +49,7 @@ body
                 
                 .gauge__label{
                   height:35px;
-                  font-size:0.7em;
+                  font-size:0.7em;             
                 }
 
                 
@@ -64,6 +68,14 @@ body
 	display : inline-block;
 	vertical-align : top;
         
+}
+
+.gauge__label-text{
+  text-align: center;
+  text-transform:uppercase;
+  line-height:1;
+  font-family: monospace;
+
 }
 
 .indicators{
