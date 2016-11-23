@@ -1,120 +1,135 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>
-      Salis Braimah
-   </title>
-   <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
-   <link rel="stylesheet" type="text/css" href="vendor/jsgauge/gauge.css">
-   <link rel="stylesheet" type="text/css" href="build/css/main.css">
+	<title>
+		Salis Braimah
+	</title>
+	<!--<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">-->
+	<link rel="stylesheet" type="text/css" href="vendor/jsgauge/gauge.css">
+	<link rel="stylesheet" type="text/css" href="build/css/main.css">
 </head>
+
 <body>
 
-  <div id = "header" class="full-width header">
-        
-  </div>
+	<div id="header" class="full-width header">
 
-  <div class="full-width section hero">
+	</div>
 
-    <div id ="hero-left" class="half-width bg-primary hero__tile hero__tile--full">
+	<div class="full-width section" id="workspace">
 
-    </div>
+		<div class="workspace">
 
-    <div id ="hero-right" class="half-width hero__tile hero__tile--full bg-white">
+			<div class="cpu">
 
-    </div>
+			</div>
 
-  </div>
+			<div class="monitor">
+				<div class="monitor__screen"></div>
+				<div class="monitor__base"></div>
+			</div>
 
-  <div id = "gauges" class = "full-width section clearfix">
+			<div class="table">
+				<div class="table__top"></div>
+				<div class="table__leg table__leg--left"></div>
+				<div class="table__leg table__leg--right"></div>
 
-   <div class="medium-12 columns ">
+			</div>
+
+		</div>
 
 
-     <div class ="gauge-container">
+	</div>
 
-        <div id = "front_end_gauge"  class="gauge gauge--small" style = ''>
-            <div class = 'gauge__label'>
-              <p class = 'gauge__label-text'>front end</p>
-            </div>
-        </div>
-         
-        <div id = "design_gauge"  class="gauge gauge--small" style = 'left:-150px'>
-            <div class = 'gauge__label'>
-              <p class = 'gauge__label-text'>design</p>
-            </div>
-        </div>
+	<div id="gauges" class="full-width section clearfix">
 
-    </div>
+		<div class="medium-12 columns ">
 
-    <div id = "overall_gauge"  class="gauge gauge--large">
-            <div class = 'gauge__label'>
-              <p class = 'gauge__label-text'>development</p>
-            </div>
-    </div>
 
-    <div class ="gauge-container">
-        
-      <div id = "back_end_gauge"  class="gauge gauge--small" style = '' >
-            <div class = 'gauge__label'>
-              <p class = 'gauge__label-text'>back end</p>
-            </div>
-      </div>	
-        
-      <div id = "mobile_gauge"  class="gauge gauge--small" style = 'left:150px'>
-            <div class = 'gauge__label'>
-              <p class = 'gauge__label-text'>mobile</p>
-            </div>
-      </div>
+			<div class="gauge-container">
 
-    </div>
+				<div id="front_end_gauge" class="gauge gauge--small" style=''>
+					<div class='gauge__label'>
+						<p class='gauge__label-text'>front end</p>
+					</div>
+				</div>
 
-  </div>
-      
-      <div class = 'medium-12 columns indicators'>
-        
-        <span class = "indicator">
+				<div id="design_gauge" class="gauge gauge--small" style='left:-150px'>
+					<div class='gauge__label'>
+						<p class='gauge__label-text'>design</p>
+					</div>
+				</div>
+
+			</div>
+
+			<div id="overall_gauge" class="gauge gauge--large">
+				<div class='gauge__label'>
+					<p class='gauge__label-text'>development</p>
+				</div>
+			</div>
+
+			<div class="gauge-container">
+
+				<div id="back_end_gauge" class="gauge gauge--small" style=''>
+					<div class='gauge__label'>
+						<p class='gauge__label-text'>back end</p>
+					</div>
+				</div>
+
+				<div id="mobile_gauge" class="gauge gauge--small" style='left:150px'>
+					<div class='gauge__label'>
+						<p class='gauge__label-text'>mobile</p>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class='medium-12 columns indicators'>
+
+			<span class="indicator">
              <span class ="indicator__led indicator__led--yellow indicator__led--yellow--on" ></span>
-             <span class ="indicator__text" >html</span>
-        </span>
-          
-        <span class = "indicator">
-             <span class ="indicator__led indicator__led--yellow indicator__led--yellow--on" ></span>
-             <span class ="indicator__text" >css</span>
-        </span>
+			<span class="indicator__text">html</span>
+			</span>
 
-        <span class = "indicator">
+			<span class="indicator">
+             <span class ="indicator__led indicator__led--yellow indicator__led--yellow--on" ></span>
+			<span class="indicator__text">css</span>
+			</span>
+
+			<span class="indicator">
             <span class ="indicator__led indicator__led--yellow indicator__led--yellow--on" ></span>
-            <span class ="indicator__text">Js</span>
-        </span>
-          
-        <span class = "indicator">
+			<span class="indicator__text">Js</span>
+			</span>
+
+			<span class="indicator">
              <span class ="indicator__led indicator__led--yellow indicator__led--yellow--on" ></span>
-             <span class ="indicator__text" >php</span>
-        </span>
-          
-        <span class = "indicator">
+			<span class="indicator__text">php</span>
+			</span>
+
+			<span class="indicator">
              <span class ="indicator__led indicator__led--yellow indicator__led--yellow--on" ></span>
-             <span class ="indicator__text" >sql</span>
-        </span>
-          
-        <span class = "indicator">
+			<span class="indicator__text">sql</span>
+			</span>
+
+			<span class="indicator">
              <span class ="indicator__led indicator__led--yellow indicator__led--yellow--on" ></span>
-             <span class ="indicator__text" >java</span>
-        </span>
-          
-        <span class = "indicator">
+			<span class="indicator__text">java</span>
+			</span>
+
+			<span class="indicator">
              <span class ="indicator__led indicator__led--yellow indicator__led--yellow-blink" ></span>
-             <span class ="indicator__text" >android</span>
-        </span>
-          
-      </div>
+			<span class="indicator__text">android</span>
+			</span>
+
+		</div>
 
 
-</div>
-    
-    <div id = 'portfolio' class = 'full-width'>
-        
+	</div>
+
+	<!--<div id = 'portfolio' class = 'full-width'>
+
         <div class = 'case-study full-width'>
             <div class = 'case-study__gallery half-width left'>
 
@@ -123,44 +138,70 @@
 
             </div>
         </div>
-        
-    </div>
+
+    </div>-->
 
 
-<script type="text/javascript" src = "vendor/jsgauge/jsgauge.js"></script>
+	<script type="text/javascript" src="vendor/jsgauge/jsgauge.js"></script>
 
-<script type="text/javascript">
+	<script type="text/javascript">
 
   (function(){
 
-    var frontEndGauge = jsGauge.init(
-                                       "#front_end_gauge",
-                                       {startAngle:150,arcDistance:240,pointCount:40}
-                                       ).setValue(90);
-    
-        var mobileGauge = jsGauge.init(
-                                       "#mobile_gauge",
-                                       {startAngle:150,arcDistance:240,pointCount:40}
-                                       ).setValue(50);
-        
-         var designGauge = jsGauge.init(
-                                       "#design_gauge",
-                                       {startAngle:150,arcDistance:240,pointCount:40}
-                                       ).setValue(75);
+    var
+		frontEndGauge = jsGauge.init(
+    		"#front_end_gauge",
+        	{ startAngle:150,
+			  arcDistance:240,
+			  pointCount:40,
+			  value:90 }
+         ).oscillate(),
 
-    var backEndGauge = jsGauge.init(
-                                "#back_end_gauge",
-                                {startAngle:150,arcDistance:240,pointCount:40}
-                                ).setValue(80);
+		 mobileGauge = jsGauge.init(
+            "#mobile_gauge",
+			{ startAngle:150,
+			  arcDistance:240,
+			  pointCount:40,
+			  value:50 }
+          ).oscillate(),
 
-    var overallGauge = jsGauge.init(
-                                    "#overall_gauge",
-                                    {startAngle:150,arcDistance:240,pointCount:70}
-                                   ).setValue(85);
-    
+
+         designGauge = jsGauge.init(
+			"#design_gauge",
+			{ startAngle:150,
+			  arcDistance:240,
+			  pointCount:40,
+			  value:75 }
+          ).oscillate(),
+
+		backEndGauge = jsGauge.init(
+			"#back_end_gauge",
+			{ startAngle:150,
+			arcDistance:240,
+			pointCount:40,
+			value:80 }
+		).oscillate(),
+
+		overallGauge = jsGauge.init(
+			"#overall_gauge",
+			{ startAngle:150,
+			arcDistance:240,
+			pointCount:40,
+			value:85 }
+		).oscillate();
+
+	// gauges = document.querySelectorAll(".gauge");
+
+	//gauges.forEach(function(gauge){
+
+
+
+	//});
+
   })();
 
 </script>
 
 </body>
+
 </html>
