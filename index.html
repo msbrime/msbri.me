@@ -16,30 +16,7 @@
 
 	</div>
 
-	<div class="full-width section" id="workspace">
 
-		<div class="workspace">
-
-			<div class="cpu">
-
-			</div>
-
-			<div class="monitor">
-				<div class="monitor__screen"></div>
-				<div class="monitor__base"></div>
-			</div>
-
-			<div class="table">
-				<div class="table__top"></div>
-				<div class="table__leg table__leg--left"></div>
-				<div class="table__leg table__leg--right"></div>
-
-			</div>
-
-		</div>
-
-
-	</div>
 
 	<div id="gauges" class="full-width section clearfix">
 
@@ -146,7 +123,7 @@
 
 	<script type="text/javascript">
 
-  (function(){
+  (function(win){
 
     var
 		frontEndGauge = jsGauge.init(
@@ -180,9 +157,9 @@
 			arcDistance:240,
 			pointCount:40,
 			value:80 }
-		).oscillate(),
+		).oscillate();
 
-		overallGauge = jsGauge.init(
+		win.overallGauge = jsGauge.init(
 			"#overall_gauge",
 			{ startAngle:150,
 			arcDistance:240,
@@ -190,15 +167,10 @@
 			value:85 }
 		).oscillate();
 
-	// gauges = document.querySelectorAll(".gauge");
 
-	//gauges.forEach(function(gauge){
+		overallGauge.setValue(20);
 
-
-
-	//});
-
-  })();
+  })(window);
 
 </script>
 
