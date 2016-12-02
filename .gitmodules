@@ -1,5 +1,0 @@
-[submodule "jsgaugejs"]
-	path = vendor/jsgauge/jsgauge.js
-
-[submodule "jsgaugecss"]
-	path = vendor/jsgauge/gauge.css
