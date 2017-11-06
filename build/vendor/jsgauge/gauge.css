@@ -1,0 +1,108 @@
+body
+{
+	box-sizing:border-box;
+	margin:0;
+	padding: 0;
+	display:block;
+}
+
+.gauge
+{
+	margin:20px;
+	box-sizing:content-box;
+	width: 250px;
+	height: 250px;
+	border: 7px solid yellow;
+	border-radius:100%;
+	background-color:#fefefe;
+	position : relative;
+  overflow: hidden;
+	box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.2) inset;
+}
+
+.gauge__mark
+{
+	width: 1px;
+	height: 7px;
+	color: #ccc;
+	position: absolute;
+	background: #ccc;
+	transform-origin: top;
+}
+
+.gauge__pointer
+{
+	width: 74px;
+	position: absolute;
+	top:10px;
+	left:50%;
+	position: relative;
+}	
+
+.gauge__pointer-top
+{
+    height: 0;
+    width: 0px;
+    position: absolute;
+  	transform: rotate(35deg);
+    transition: transform .5s;
+    transform-origin: 50% 100%;
+}
+
+.gauge__pointer-base
+{	
+	position: absolute;
+	bottom: 0px;
+	border-radius: 100%;
+	background-color: yellow;
+	display: block;
+}
+
+.gauge__pointer-base::after
+{
+	content:"";
+	position: absolute;
+	width: 30%;
+	height: 30%;
+	top:35%;
+	left:35%;
+	border-radius:inherit;
+	background-color:#fefefe;
+	box-shadow: inset 0px -1px 2px 2px rgba(0,0,0,0.2);
+}
+
+.gauge__label{
+  position:absolute;
+  bottom:-5px;
+  width:50%;
+  height:50px;
+  left:25%;
+  border-radius: 3px 3px 0 0;
+  *border:2px solid yellow;
+  box-shadow: inset 0 0 5px 2px rgba(0,0,0,0.2);
+}
+
+.gauge__label-text{
+  text-align: center;
+  text-transform:uppercase;
+  line-height:0.5;
+
+}
+
+.wobble{
+  animation : wobble .3s infinite;
+}
+
+@keyframes wobble
+{
+
+	0%,100%{
+		transform:rotate(50deg);
+	}
+	50%{
+		transform:rotate(51deg);
+	}
+
+}
+
+
