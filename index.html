@@ -2,6 +2,7 @@
 <html>
 
 <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>
 		Salis Braimah
 	</title>
@@ -13,7 +14,7 @@
 <body>
 
 	<div id="header" class="full-width header">
-
+		<h3><a href="https://github.com/msbrime">@msbrime</a></h3>
 	</div>
 
 
@@ -25,13 +26,13 @@
 
 			<div class="gauge-container">
 
-				<div id="front_end_gauge" class="gauge gauge--small" style=''>
+				<div id="front_end_gauge" class="gauge gauge--small">
 					<div class='gauge__label'>
 						<p class='gauge__label-text'>front end</p>
 					</div>
 				</div>
 
-				<div id="design_gauge" class="gauge gauge--small" style='left:-150px'>
+				<div id="design_gauge" class="gauge gauge--small">
 					<div class='gauge__label'>
 						<p class='gauge__label-text'>design</p>
 					</div>
@@ -53,7 +54,7 @@
 					</div>
 				</div>
 
-				<div id="mobile_gauge" class="gauge gauge--small" style='left:150px'>
+				<div id="mobile_gauge" class="gauge gauge--small">
 					<div class='gauge__label'>
 						<p class='gauge__label-text'>mobile</p>
 					</div>
@@ -122,57 +123,58 @@
 	<script type="text/javascript" src="vendor/jsgauge/jsgauge.js"></script>
 
 	<script type="text/javascript">
+		(function (win) {
 
-  (function(win){
+			var
+				frontEndGauge = jsGauge.init(
+					"#front_end_gauge", {
+						startAngle: 150,
+						arcDistance: 240,
+						pointCount: 40,
+						value: 85
+					}
+				).oscillate(),
 
-    var
-		frontEndGauge = jsGauge.init(
-    		"#front_end_gauge",
-        	{ startAngle:150,
-			  arcDistance:240,
-			  pointCount:40,
-			  value:90 }
-         ).oscillate(),
-
-		 mobileGauge = jsGauge.init(
-            "#mobile_gauge",
-			{ startAngle:150,
-			  arcDistance:240,
-			  pointCount:40,
-			  value:50 }
-          ).oscillate(),
-
-
-         designGauge = jsGauge.init(
-			"#design_gauge",
-			{ startAngle:150,
-			  arcDistance:240,
-			  pointCount:40,
-			  value:75 }
-          ).oscillate(),
-
-		backEndGauge = jsGauge.init(
-			"#back_end_gauge",
-			{ startAngle:150,
-			arcDistance:240,
-			pointCount:40,
-			value:80 }
-		).oscillate();
-
-		win.overallGauge = jsGauge.init(
-			"#overall_gauge",
-			{ startAngle:150,
-			arcDistance:240,
-			pointCount:40,
-			value:85 }
-		).oscillate();
+				mobileGauge = jsGauge.init(
+					"#mobile_gauge", {
+						startAngle: 150,
+						arcDistance: 240,
+						pointCount: 40,
+						value: 50
+					}
+				).oscillate(),
 
 
-		overallGauge.setValue(20);
+				designGauge = jsGauge.init(
+					"#design_gauge", {
+						startAngle: 150,
+						arcDistance: 240,
+						pointCount: 40,
+						value: 65
+					}
+				).oscillate(),
 
-  })(window);
+				backEndGauge = jsGauge.init(
+					"#back_end_gauge", {
+						startAngle: 150,
+						arcDistance: 240,
+						pointCount: 40,
+						value: 70
+					}
+				).oscillate();
 
-</script>
+			win.overallGauge = jsGauge.init(
+				"#overall_gauge", {
+					startAngle: 150,
+					arcDistance: 240,
+					pointCount: 40,
+					value: 80
+				}
+			).oscillate();
+
+
+		})(window);
+	</script>
 
 </body>
 

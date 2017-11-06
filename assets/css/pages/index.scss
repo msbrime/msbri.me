@@ -10,8 +10,16 @@ and open the template in the editor.
 
 #gauges
 {
-    padding : 150px 0 50px;
+    padding : 50px 0 50px;
     text-align:center;
+
+    @media #{$large}{
+        padding: 120px 0 50px;
+    }
+    
+    @media #{$xlarge-up}{
+        padding: 180px 0 50px;
+    }
 }
 
 .hero
