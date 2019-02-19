@@ -233,3 +233,16 @@ body.light .about-me::before{
     border-top-color: #f5f5f5;
     transition-delay: 0s;
 }
+
+
+/******************
+*  MEDIA QUERIES  *
+*******************/
+@media screen and (min-width: 200px) and (max-width : 480px){
+    .about-me{
+        position: relative;
+        width: 250px;
+        top: -335px;
+        left: -75px;
+    }  
+}
