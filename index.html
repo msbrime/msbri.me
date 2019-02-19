@@ -1,181 +1,330 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>
-		Salis Braimah
-	</title>
-	<!--<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">-->
-	<link rel="stylesheet" type="text/css" href="build/vendor/jsgauge/gauge.css">
-	<link rel="stylesheet" type="text/css" href="build/css/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Damion|Quicksand" rel="stylesheet">
+    <title>Salis Braimah</title>
 </head>
-
 <body>
+<style>
 
-	<div id="header" class="full-width header">
-		<h3><a href="https://github.com/msbrime">@msbrime</a></h3>
-	</div>
+    html,body{
+        padding: 0;
+        margin: 0;
+        font-family: "Quicksand"
+    }
+
+    body *{
+        box-sizing: border-box;
+    }
+
+    .header{
+        top: 0;
+        left: 0;
+    }
+
+    .footer{
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        padding-bottom: 5px;
+    }
+
+    .header,.footer{
+        position: absolute;
+        height: 50px;
+        min-width: 100vw;
+        z-index: 10;
+    }
+
+    .name-tag{
+        font-family:"Damion";
+        font-size: 2.5em;
+        padding-left: 20px;
+        font-weight: 100;
+        text-align: center;
+        margin: 0px;
+        margin-top: -10px;
+        color: #fff;
+        transition: color .25s;
+    }
+
+    .footer .name-tag span{
+        font-family: "Quicksand";
+        font-size: .55em;
+        vertical-align: super;
+    }
+
+    .social-links{
+        float: right;
+    }
+
+    .social-links{
+        padding: 0;
+        list-style: none;
+        position: relative;
+        left: 55px;
+        width: 200px;
+    }
+
+    .social-links li{
+        display: inline-block;
+        list-style: none;
+        min-width: 35px;
+        min-height: 35px;
+        position: relative;
+        top: -4px;
+        margin-right: 15px;
+    }
+
+    li.social-links__twitter{
+
+    }
+
+    li.social-links__github{
+        min-width: 40px;
+        max-width: 40px;
+        min-height: 40px;
+        max-height: 40px;
+        top: 0;
+    }
+
+    li.social-links__linkedin{       
+    }
+
+    .social-links li svg,
+    .social-links li svg>path{
+        fill:#f5f5f5;
+        transition: fill .25s;
+        transition-delay: .25s;
+    }
+
+    .content-wrapper{
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        padding: 10px;
+        margin: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #333;
+    }
+
+    body.light div.content--light{
+        z-index: 3;
+        min-width: 3000px;
+        height: 3000px;
+    }
+
+    .content{
+        position: absolute;
+        z-index: 10;
+        width: 100px;
+        height: 100px;
+    }
+
+    .thumbnail{
+        z-index: 10;
+        width: 100px;
+        height: 100px;
+        border:10px solid #f5f5f5;
+        border-radius: 50%;
+        background: no-repeat center/100% url('salis.png') #f5f5f5;
+    }
+
+    .about-me{
+        position: relative;
+        width: 400px;
+        left: -150px;
+        top: -385px;
+        height: auto;
+        vertical-align: top;
+        display: inline-block;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 3px solid;
+        border-color: #f5f5f5;
+        color: #f5f5f5;
+        border-radius: 5px;
+        transition: border-color .25s,color .25s;
+        transition-delay: .25s;
+    }
+
+    .about-me::after{
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        margin-left: -20px;
+        display: block;
+        content:"";
+        width: 0px;
+        height:0px;
+        border-bottom: 20px solid transparent;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 20px solid;
+        border-top-color: #f5f5f5;
+        transition: border-top-color .25s;
+        transition-delay: .25s;
+    }
+
+    .about-me::before{
+        position: absolute;
+        bottom: -35px;
+        left: 50%;
+        margin-left: -19px;
+        display: block;
+        content:"";
+        z-index: 1;
+        width: 0px;
+        height:0px;
+        border-bottom: 19px solid transparent;
+        border-left: 19px solid transparent;
+        border-right: 19px solid transparent;
+        border-top: 19px solid;
+        border-top-color: #333;
+        transition: border-top-color .25s;
+        transition-delay: .35s;
+    }
+
+    .about-me p{
+        margin: 0;
+        padding: 0;
+        padding: 10px;
+        border-radius: inherit;
+        position: relative;
+    }
+
+    /* .about-me p::after{
+        position: absolute;
+        bottom: -28px;
+        left: 50%;
+        margin-left: -14px;
+        z-index: 2;
+        display: block;
+        content:"";
+        width: 0px;
+        height:0px;
+        border-bottom: 14px solid transparent;
+        border-left: 14px solid transparent;
+        border-right: 14px solid transparent;
+        border-top: 14px solid;
+        border-top-color: #f5f5f5;
+        transition: border-top-color .25s;
+        transition-delay: .25s;
+    }
+
+    .about-me p::before{
+        position: absolute;
+        bottom: -23px;
+        left: 50%;
+        z-index: 3;
+        margin-left: -12px;
+        display: block;
+        content:"";
+        width: 0px;
+        height:0px;
+        border-bottom: 12px solid transparent;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-top: 12px solid;
+        border-top-color: #333;
+        transition: border-top-color .25s;
+        transition-delay: .25s;
+    } */
+
+    .content--light{
+        position: relative;
+        z-index: 1;
+        background-color: #f5f5f5;
+        min-width: 0;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        transition: width .75s,height .75s,z-index .25s,min-width .75s;
+    }
+
+    .theme-selector{
+        width: 30px;
+        height: 30px;
+        background-color: red;
+        border-radius: 5px;
+    }
 
 
+    /** Light Theme **/
+    body.light .social-links li svg,
+    body.light .social-links li svg>path{
+        fill:#333;
+    }
 
-	<div id="gauges" class="full-width section clearfix">
+    body.light .about-me{
+        color: #333;
+        border-color: #333;
+    }
 
-		<div class="medium-12 columns ">
+    body.light .name-tag{
+        color: #333;
+    }
 
+    body.light .about-me::after{
+        border-top-color: #333;
+        transition-delay: .25s;
+    }
 
-			<div class="gauge-container">
+    body.light .about-me::before{
+        border-top-color: #f5f5f5;
+        transition-delay: 0s;
+    }
 
-				<div id="front_end_gauge" class="gauge gauge--small">
-					<div class='gauge__label'>
-						<p class='gauge__label-text'>front end</p>
-					</div>
-				</div>
-
-				<div id="design_gauge" class="gauge gauge--small">
-					<div class='gauge__label'>
-						<p class='gauge__label-text'>design</p>
-					</div>
-				</div>
-
-			</div>
-
-			<div id="overall_gauge" class="gauge gauge--large">
-				<div class='gauge__label'>
-					<p class='gauge__label-text'>development</p>
-				</div>
-			</div>
-
-			<div class="gauge-container">
-
-				<div id="back_end_gauge" class="gauge gauge--small" style=''>
-					<div class='gauge__label'>
-						<p class='gauge__label-text'>back end</p>
-					</div>
-				</div>
-
-				<div id="mobile_gauge" class="gauge gauge--small">
-					<div class='gauge__label'>
-						<p class='gauge__label-text'>mobile</p>
-					</div>
-				</div>
-
-			</div>
-
-		</div>
-
-		<div class='medium-12 columns indicators'>
-
-			<span class="indicator">
-             <span class ="indicator__led indicator__led--yellow indicator__led--yellow--on" ></span>
-			<span class="indicator__text">html</span>
-			</span>
-
-			<span class="indicator">
-             <span class ="indicator__led indicator__led--yellow indicator__led--yellow--on" ></span>
-			<span class="indicator__text">css</span>
-			</span>
-
-			<span class="indicator">
-            <span class ="indicator__led indicator__led--yellow indicator__led--yellow--on" ></span>
-			<span class="indicator__text">Js</span>
-			</span>
-
-			<span class="indicator">
-             <span class ="indicator__led indicator__led--yellow indicator__led--yellow--on" ></span>
-			<span class="indicator__text">php</span>
-			</span>
-
-			<span class="indicator">
-             <span class ="indicator__led indicator__led--yellow indicator__led--yellow--on" ></span>
-			<span class="indicator__text">sql</span>
-			</span>
-
-			<span class="indicator">
-             <span class ="indicator__led indicator__led--yellow indicator__led--yellow--on" ></span>
-			<span class="indicator__text">java</span>
-			</span>
-
-			<span class="indicator">
-             <span class ="indicator__led indicator__led--yellow indicator__led--yellow-blink" ></span>
-			<span class="indicator__text">android</span>
-			</span>
-
-		</div>
-
-
-	</div>
-
-	<!--<div id = 'portfolio' class = 'full-width'>
-
-        <div class = 'case-study full-width'>
-            <div class = 'case-study__gallery half-width left'>
-
+</style>
+    <div class="header">
+            <div class="theme-selector"></div>
+    </div>
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="thumbnail">
             </div>
-            <div class = 'case-study__text half-width left'>
-
-            </div>
+            <ul class="social-links">
+                    <li class="social-links__twitter">
+                        <a href="https://twitter.com/_msbrime">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612"><path d="M612 116.258a250.714 250.714 0 0 1-72.088 19.772c25.929-15.527 45.777-40.155 55.184-69.411-24.322 14.379-51.169 24.82-79.775 30.48-22.907-24.437-55.49-39.658-91.63-39.658-69.334 0-125.551 56.217-125.551 125.513 0 9.828 1.109 19.427 3.251 28.606-104.326-5.24-196.835-55.223-258.75-131.174-10.823 18.51-16.98 40.078-16.98 63.101 0 43.559 22.181 81.993 55.835 104.479a125.556 125.556 0 0 1-56.867-15.756v1.568c0 60.806 43.291 111.554 100.693 123.104-10.517 2.83-21.607 4.398-33.08 4.398-8.107 0-15.947-.803-23.634-2.333 15.985 49.907 62.336 86.199 117.253 87.194-42.947 33.654-97.099 53.655-155.916 53.655-10.134 0-20.116-.612-29.944-1.721 55.567 35.681 121.536 56.485 192.438 56.485 230.948 0 357.188-191.291 357.188-357.188l-.421-16.253c24.666-17.593 46.005-39.697 62.794-64.861z" fill="#010002"/></svg>
+                        </a>
+                    </li>
+                    <li class="social-links__github">
+                        <a href="https://github.com/msbrime">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="42.562" height="42.562"><path d="M33.052 20.892c3.347.263 6.67.55 9.416 1.407-2.724-.446-6.031-1.124-9.416-1.219-1.397 2.76-4.214 4.116-8.099 4.401.418.908 1.218 1.254 1.414 2.717.289 2.185-.457 5.383.279 6.838.354.697.93.715 1.318 1.312-.951 1.125-3.311-.127-3.578-1.312-.461-2.03.7-5.18-.564-6.559.09 2.217-.522 5.326.095 7.307.243.777.946 1.08.754 1.781-4.423.449-2.574-5.725-3.297-9.367-.668.047-.375 1-.377 1.404-.02 3.559.729 8.438-3.107 7.963-.111-.746.517-1.004.754-1.686.699-2.002-.131-4.986.19-7.402-1.464 1.104.153 4.957-.755 6.934-.521 1.136-2.206 1.631-3.482 1.123.166-.848 1.041-.709 1.412-1.498.518-1.102.002-2.686.188-4.311-2.71.541-4.812-.076-5.84-1.779-.459-.764-.574-1.664-1.129-2.34-.556-.68-1.438-.77-1.694-1.688 3.354-.809 3.483 3.453 6.497 3.559.925.033 1.404-.268 2.26-.467.238-1.074.752-1.877 1.507-2.438-3.75-.515-6.847-1.683-8.286-4.495-3.408.168-6.527.623-9.418 1.312 2.623-.954 5.856-1.294 9.324-1.405-.205-1.229-1.996-.891-3.107-.844-2.065.092-4.668.349-6.311.657 2.383-.85 5.723-.744 8.947-.75-.986-3.093-.646-8.006 1.506-9.836-.609-1.535-.42-4.05.377-5.246 2.4.108 3.857 1.155 5.367 2.155 1.871-.532 3.839-.797 6.402-.655 1.078.062 2.201.543 3.013.467.797-.072 1.676-.969 2.448-1.31 1.009-.446 1.86-.614 3.015-.657.554 1.258.912 3.344.377 4.871 2.188 1.868 2.938 6.407 1.883 10.118 3.117.237 6.83-.114 9.229.843-2.24-.289-5.301-.854-8.189-.656-.553.038-1.362-.018-1.323.751z"/></svg>
+                        </a>
+                    </li>
+                    <li class="social-links__linkedin">
+                        <a href="https://www.linkedin.com/in/msbrime/">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260.366 260.366"><path d="M34.703.183C15.582.183.014 15.748 0 34.884 0 54.02 15.568 69.588 34.703 69.588c19.128 0 34.688-15.568 34.688-34.704C69.391 15.75 53.83.183 34.703.183zM60.748 83.531H8.654a4.488 4.488 0 0 0-4.488 4.489v167.675a4.488 4.488 0 0 0 4.488 4.488h52.093a4.49 4.49 0 0 0 4.489-4.488V88.02a4.486 4.486 0 0 0-4.488-4.489zM193.924 81.557c-19.064 0-35.817 5.805-46.04 15.271V88.02c0-2.48-2.01-4.489-4.489-4.489H93.424a4.489 4.489 0 0 0-4.489 4.489v167.675a4.488 4.488 0 0 0 4.489 4.488h52.044a4.49 4.49 0 0 0 4.489-4.488v-82.957c0-23.802 4.378-38.555 26.227-38.555 21.526.026 23.137 15.846 23.137 39.977v81.535a4.489 4.489 0 0 0 4.49 4.488h52.068a4.489 4.489 0 0 0 4.488-4.488v-91.977c-.001-38.253-7.553-82.161-66.443-82.161z"/></svg>
+                        </a> 
+                    </li>
+                </ul>
+                <div class="about-me">
+                    <p>Hi, my name is Salis and Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quibusdam consequatur? Nam blanditiis a ea excepturi temporibus quam molestiae minus minima magnam maiores expedita veniam quia, sed quos, corporis sequi!</p>
+                </div>
         </div>
+        <div class="content--light"></div>
+    </div>
+    <div class="footer">
+            <p class="name-tag">msbrime<span>&reg;</span></p>
+         
+    </div> 
 
-    </div>-->
+    <script>
+        var toggle = document.querySelector(".theme-selector");
 
-
-	<script type="text/javascript" src="build/vendor/jsgauge/jsgauge.js"></script>
-
-	<script type="text/javascript">
-		(function (win) {
-
-			var
-				frontEndGauge = jsGauge.init(
-					"#front_end_gauge", {
-						startAngle: 150,
-						arcDistance: 240,
-						pointCount: 40,
-						value: 85
-					}
-				).oscillate(),
-
-				mobileGauge = jsGauge.init(
-					"#mobile_gauge", {
-						startAngle: 150,
-						arcDistance: 240,
-						pointCount: 40,
-						value: 50
-					}
-				).oscillate(),
-
-
-				designGauge = jsGauge.init(
-					"#design_gauge", {
-						startAngle: 150,
-						arcDistance: 240,
-						pointCount: 40,
-						value: 65
-					}
-				).oscillate(),
-
-				backEndGauge = jsGauge.init(
-					"#back_end_gauge", {
-						startAngle: 150,
-						arcDistance: 240,
-						pointCount: 40,
-						value: 70
-					}
-				).oscillate();
-
-			win.overallGauge = jsGauge.init(
-				"#overall_gauge", {
-					startAngle: 150,
-					arcDistance: 240,
-					pointCount: 40,
-					value: 80
-				}
-			).oscillate();
-
-
-		})(window);
-	</script>
-
+        toggle.addEventListener("click",function(e){
+            document.querySelector("body").classList.toggle("light")
+        })
+    </script>
 </body>
-
 </html>
