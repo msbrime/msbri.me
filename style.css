@@ -37,7 +37,7 @@ body *{
     text-align: center;
     margin: 0px;
     margin-top: -10px;
-    color: #fff;
+    color: #eaeaea;
     transition: color .25s;
 }
 
@@ -47,11 +47,108 @@ body *{
     vertical-align: super;
 }
 
+.content-wrapper{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0e0f19;
+}
+
+.content{
+    position: absolute;
+    z-index: 10;
+    width: 200px;
+    height: 200px;
+}
+
+.thumbnail{
+    z-index: 10;
+    width: 200px;
+    height: 200px;
+    border:10px solid #eaeaea;
+    border-radius: 50%;
+    background: no-repeat center/100% url('salis.png') #eaeaea;
+}
+
+.about-me{
+    position: relative;
+    width: 400px;
+    left: -100px;
+    top: -400px;
+    height: auto;
+    vertical-align: top;
+    display: inline-block;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 3px solid;
+    border-color: #eaeaea;
+    color: #eaeaea;
+    border-radius: 5px;
+    transition: border-color .25s,color .25s;
+    transition-delay: .25s;
+}
+
+.about-me::before,.about-me::after{
+    position: absolute;
+    content:"";
+    width: 0px;
+    height:0px;
+    display: block;
+    left: 50%;
+}
+
+.about-me::after{
+    bottom: -40px;
+    margin-left: -20px;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid;
+    border-top-color: #eaeaea;
+    transition: border-top-color .25s;
+    transition-delay: .25s;
+}
+
+.about-me::before{
+    bottom: -35px;
+    margin-left: -19px;
+    border-bottom: 19px solid transparent;
+    border-left: 19px solid transparent;
+    border-right: 19px solid transparent;
+    border-top: 19px solid;
+    border-top-color: #0e0f19;
+    transition: border-top-color .25s;
+    transition-delay: .35s;
+    z-index: 1;
+}
+
+.about-me p{
+    margin: 0;
+    padding: 0;
+    padding: 10px;
+    border-radius: inherit;
+    position: relative;
+}
+
+.about-me p a{
+    color: #3d5a80;
+    border-bottom: 1px dotted #3d5a80;
+    text-decoration: none;
+}
+
 .social-links{
     padding: 0;
     list-style: none;
     position: relative;
-    left: -48px;
+    top: 10px;
     width: 200px;
 }
 
@@ -82,106 +179,15 @@ li.social-links__linkedin{
 
 .social-links li svg,
 .social-links li svg>path{
-    fill:#f5f5f5;
+    fill:#eaeaea;
     transition: fill .25s;
     transition-delay: .25s;
-}
-
-.content-wrapper{
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-    padding: 10px;
-    margin: 0;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #333;
-}
-
-.content{
-    position: absolute;
-    z-index: 10;
-    width: 100px;
-    height: 100px;
-}
-
-.thumbnail{
-    z-index: 10;
-    width: 100px;
-    height: 100px;
-    border:10px solid #f5f5f5;
-    border-radius: 50%;
-    background: no-repeat center/100% url('salis.png') #f5f5f5;
-}
-
-.about-me{
-    position: relative;
-    width: 400px;
-    left: -150px;
-    top: -300px;
-    height: auto;
-    vertical-align: top;
-    display: inline-block;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 3px solid;
-    border-color: #f5f5f5;
-    color: #f5f5f5;
-    border-radius: 5px;
-    transition: border-color .25s,color .25s;
-    transition-delay: .25s;
-}
-
-.about-me::before,.about-me::after{
-    position: absolute;
-    content:"";
-    width: 0px;
-    height:0px;
-    display: block;
-    left: 50%;
-}
-
-.about-me::after{
-    bottom: -40px;
-    margin-left: -20px;
-    border-bottom: 20px solid transparent;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 20px solid;
-    border-top-color: #f5f5f5;
-    transition: border-top-color .25s;
-    transition-delay: .25s;
-}
-
-.about-me::before{
-    bottom: -35px;
-    margin-left: -19px;
-    border-bottom: 19px solid transparent;
-    border-left: 19px solid transparent;
-    border-right: 19px solid transparent;
-    border-top: 19px solid;
-    border-top-color: #333;
-    transition: border-top-color .25s;
-    transition-delay: .35s;
-    z-index: 1;
-}
-
-.about-me p{
-    margin: 0;
-    padding: 0;
-    padding: 10px;
-    border-radius: inherit;
-    position: relative;
 }
 
 .content--light{
     position: relative;
     z-index: 1;
-    background-color: #f5f5f5;
+    background-color: #eaeaea;
     min-width: 0;
     width: 0;
     height: 0;
@@ -206,7 +212,7 @@ li.social-links__linkedin{
 *****************/
 body.light .social-links li svg,
 body.light .social-links li svg>path{
-    fill:#333;
+    fill:#0e0f19;
 }
 
 body.light div.content--light{
@@ -216,21 +222,21 @@ body.light div.content--light{
 }
 
 body.light .about-me{
-    color: #333;
-    border-color: #333;
+    color: #0e0f19;
+    border-color: #0e0f19;
 }
 
 body.light .name-tag{
-    color: #333;
+    color: #0e0f19;
 }
 
 body.light .about-me::after{
-    border-top-color: #333;
+    border-top-color: #0e0f19;
     transition-delay: .25s;
 }
 
 body.light .about-me::before{
-    border-top-color: #f5f5f5;
+    border-top-color: #eaeaea;
     transition-delay: 0s;
 }
 
@@ -242,7 +248,7 @@ body.light .about-me::before{
     .about-me{
         position: relative;
         width: 250px;
-        top: -335px;
-        left: -75px;
+        top: -440px;
+        left: -25px;
     }  
 }
