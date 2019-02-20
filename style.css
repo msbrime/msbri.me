@@ -150,6 +150,7 @@ body *{
     position: relative;
     top: 10px;
     width: 200px;
+    left: 10px;
 }
 
 .social-links li{
@@ -176,6 +177,22 @@ li.social-links__github{
 
 li.social-links__linkedin{       
 }
+
+.social-links li.social-links__linkedin:hover svg>path,
+.social-links li.social-links__linkedin:hover svg{
+    fill: #0077b5;
+}
+
+.social-links li.social-links__twitter:hover svg>path,
+.social-links li.social-links__twitter:hover svg{
+    fill: #55acee;
+}
+
+.social-links li.social-links__github:hover svg>path,
+.social-links li.social-links__github:hover svg{
+    fill: #333;
+}
+
 
 .social-links li svg,
 .social-links li svg>path{
@@ -244,11 +261,35 @@ body.light .about-me::before{
 /******************
 *  MEDIA QUERIES  *
 *******************/
-@media screen and (min-width: 200px) and (max-width : 480px){
+@media screen and (min-width: 321px) and (max-width : 480px){
     .about-me{
         position: relative;
         width: 250px;
         top: -440px;
         left: -25px;
     }  
+}
+
+
+@media screen and (min-width: 0px) and (max-width : 320px){
+    .about-me{
+        position: relative;
+        width: 250px;
+        top: -335px;
+        left: -75px;
+    }
+
+    .content{
+        width: 100px;
+        height: 100px;
+    }
+
+    .thumbnail{
+        width: 100px;
+        height: 100px;
+    }
+
+    .social-links{
+        left: -40px;
+    }
 }
