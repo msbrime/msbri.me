@@ -10,12 +10,19 @@
 </head>
 <body>
     <div class="header">
-            <div class="theme-selector"></div>
     </div>
     <div class="content-wrapper">
         <div class="content">
+                <div class="about-me">
+                        <p>Hi, my name is Salis. I 
+                            <a href="https://github.com/msbrime">build</a> software, 
+                            <a href="https://www.youtube.com/channel/UCcBPAtdWxzHC_iRIyajuoFw">play</a> video games and 
+                            <a href="">write</a> about random stuff
+                        </p>
+                    </div>
             <div class="thumbnail">
             </div>
+            <div class="controls">
             <ul class="social-links">
                     <li class="social-links__twitter">
                         <a href="https://twitter.com/_msbrime">
@@ -33,13 +40,12 @@
                         </a> 
                     </li>
                 </ul>
-                <div class="about-me">
-                    <p>Hi, my name is Salis. I 
-                        <a href="https://github.com/msbrime">build</a> software, 
-                        <a href="https://www.youtube.com/channel/UCcBPAtdWxzHC_iRIyajuoFw">play</a> video games and 
-                        <a href="">write</a> about random stuff
-                    </p>
-                </div>
+                <input type="checkbox" id='theme-toggle'> 
+                <label for='theme-toggle' class="toggle">    
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
         </div>
         <div class="content--light"></div>
     </div>
@@ -48,9 +54,9 @@
     </div> 
 
     <script>
-        var toggle = document.querySelector(".theme-selector");
+        var toggle = document.querySelector("#theme-toggle");
 
-        toggle.addEventListener("click",function(e){
+        toggle.addEventListener("change",function(e){
             document.querySelector("body").classList.toggle("light")
         })
     </script>
