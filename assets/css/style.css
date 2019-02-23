@@ -71,7 +71,7 @@ body *{
     height: 200px;
     border:10px solid #eaeaea;
     border-radius: 50%;
-    background: no-repeat center/100% url('salis.png') #eaeaea;
+    background: no-repeat center/100% url('/assets/images/salis.png') #eaeaea;
 }
 
 .about-me{
