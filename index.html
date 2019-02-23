@@ -39,8 +39,8 @@
                         </a> 
                     </li>
                 </ul>
-                <input type="checkbox" id='theme-toggle'> 
-                <label for='theme-toggle' class="toggle">    
+                <input type="checkbox" id='toggle'> 
+                <label for='toggle'>    
                     <span></span>
                     <span></span>
                 </label>
@@ -50,9 +50,8 @@
     </div>
 
     <script>
-        var toggle = document.querySelector("#theme-toggle");
-
-        toggle.addEventListener("change",function(e){
+        document.querySelector("#toggle")
+        .addEventListener("change",function(){
             document.querySelector("body").classList.toggle("light")
         })
     </script>

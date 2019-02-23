@@ -97,15 +97,12 @@ body *{
     width: 0px;
     height:0px;
     display: block;
-    left: 50%;
 }
 
 .about-me::after{
     bottom: -40px;
-    margin-left: -20px;
-    border-bottom: 20px solid transparent;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
+    left: calc(50% - 20px);
+    border: 20px solid transparent;
     border-top: 20px solid;
     border-top-color: #eaeaea;
     transition: border-top-color .25s;
@@ -114,10 +111,8 @@ body *{
 
 .about-me::before{
     bottom: -35px;
-    margin-left: -19px;
-    border-bottom: 19px solid transparent;
-    border-left: 19px solid transparent;
-    border-right: 19px solid transparent;
+    left: calc(50% - 19px);
+    border: 19px solid transparent;
     border-top: 19px solid;
     border-top-color: #0e0f19;
     transition: border-top-color .25s;
@@ -214,44 +209,34 @@ li.social-links__linkedin{
 }
 
   
-.toggle{
-    border:1px solid #eaeaea;
-    display: block;
-    position: relative;
-    left: 23px;
-    top: 40px;
-    transform:translate(-50%,-50%) scale(.85);
-    width: 56px;
-    height: 32px;
-    border-radius: 30px;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
-    padding: 3px;
-    overflow: hidden;
-    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, .75) inset;
-    transition: border-color .5s;
-    -webkit-transition: border-color .5s;
-    -moz-transition: border-color .5s;
-    -ms-transition: border-color .5s;
-    -o-transition: border-color .5s;
-    -webkit-transform:translate(-50%,-50%) scale(.85);
-    -moz-transform:translate(-50%,-50%) scale(.85);
-    -ms-transform:translate(-50%,-50%) scale(.85);
-    -o-transform:translate(-50%,-50%) scale(.85);
-}
-  
-#theme-toggle{
+#toggle{
     position:absolute;
     left:-9999px;
 }
 
+#toggle+label{
+    border:1px solid #eaeaea;
+    display: block;
+    position: relative;
+    margin:20px;
+    transform:scale(.85);
+    width: 56px;
+    height: 32px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    padding: 3px;
+    overflow: hidden;
+    box-shadow: 0px 0px 1px 1px rgba(0, 0,0, .75) inset;
+    transition: border-color .5s;
+}
+  
 #theme-toggle:checked+label{
     border:1px solid #999;  
 }
 
-.toggle span:first-of-type{
+#toggle+label>span:first-of-type{
+    animation:slide 200ms;
+    -webkit-animation:slide2 200ms;
     position: relative;
     z-index: 2;
     display: inline-block;
@@ -259,34 +244,24 @@ li.social-links__linkedin{
     width: 24px;
     background-color:#eaeaea;
     border-radius: 22px;
-    -webkit-border-radius: 22px;
-    -moz-border-radius: 22px;
-    -ms-border-radius: 22px;
-    -o-border-radius: 22px;
     box-shadow: 0px 0px 1px 1px rgba(0,0,0,.75);
+    animation-fill-mode: forwards;
+    transition:left 180ms,background-color 1s;
+    transition-delay: 0s;
+    left: 0px;
 }
 
-#theme-toggle:checked+label>span:first-of-type{
-    animation:slide-left .2s;
-    -webkit-animation:slide-left .2s;
-    animation-fill-mode: forwards;
-    transition:left .02s,background-color 1s;
-    transition-delay: .18s;
+#toggle:checked+label>span:first-of-type{
+    animation:slide .2s;
+    -webkit-animation:slide .2s;
+    transition:left 20ms,background-color 1s;
+    transition-delay: 180ms;
     left: 24px;
     background-color:#FFD700;
     box-shadow: 0px 0px 1px 1px rgba(0,0,0,.5);
 }
 
-#theme-toggle+label>span:first-of-type{
-    animation:slide-right .2s;
-    -webkit-animation:slide-right .2s;
-    animation-fill-mode: forwards;
-    transition:left .18s;
-    transition-delay: 0s;
-    left: 0px;
-}
-
-#theme-toggle+label>span:nth-of-type(2){
+#toggle+label>span:nth-of-type(2){
     position: absolute;
     z-index: 1;
     display: block;
@@ -297,34 +272,19 @@ li.social-links__linkedin{
     background:radial-gradient(circle at 0%,#3d68a0 ,#000 100%);
 }
 
-#theme-toggle:checked+label>span:nth-of-type(2){
+#toggle:checked+label>span:nth-of-type(2){
     background:radial-gradient(circle at 100%,#98c1d9 ,#fff 100%)
 }
 
-
-
-
-@keyframes slide-right{
-    0%{
-        width:24px;
-    }
+@keyframes slide{
     90%{
         width: 48px;
-    }
-    100%{     
-        width: 24px;
     }
 }
 
-@keyframes slide-left{
-    0%{
-        width:24px;
-    }
+@keyframes slide2{
     90%{
         width: 48px;
-    }
-    100%{     
-        width: 24px;
     }
 }
 
@@ -385,32 +345,4 @@ body.light .about-me::before{
         height: 110px;
         border:5px solid #eaeaea;
     }
-
-    /* .social-links li{
-        min-width: 25px;
-        min-height: 25px;
-        max-width: 25px;
-        max-height: 25px;
-    }
-
-    li.social-links__github{
-        min-width: 32px;
-        max-width: 32px;
-        min-height: 32px;
-        max-height: 32px;
-        top: 0;
-    }
-
-    .toggle{
-        top: 25px;
-        transform:translate(-50%,-50%) scale(.75);
-        -webkit-transform:translate(-50%,-50%) scale(.75);
-        -moz-transform:translate(-50%,-50%) scale(.75);
-        -ms-transform:translate(-50%,-50%) scale(.75);
-        -o-transform:translate(-50%,-50%) scale(.75);
-    }
-
-    .name-tag{
-        font-size: 2em;
-    } */
 }
