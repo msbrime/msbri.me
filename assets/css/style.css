@@ -71,7 +71,7 @@ body *{
     content:"";
     display: block;
     top: 70px;
-    left: calc(50% - 14px);
+    left: calc(50% - 13px);
     width:2px;
     height:2px;
     display: block;
@@ -84,7 +84,7 @@ body *{
   }
 
   .thumbnail::after{
-    left: calc(50% + 13px);
+    left: calc(50% + 11px);
   }
 
 .about-me{
@@ -358,12 +358,11 @@ body.light .thumbnail{
     }
 
     .thumbnail::before,.thumbnail::after{
-        top:45px;
-        left: calc(50% - 10px);
+        top:46px;
+        left: calc(50% - 9px);
     }
 
     .thumbnail::after{
-        top:46px;
         left: calc(50% + 8px);
       }
 
