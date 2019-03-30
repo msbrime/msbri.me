@@ -22,23 +22,7 @@ body *{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.name-tag{
-    font-family:"Damion";
-    font-size: 1.5em;
-    font-weight: 100;
-    text-align: right;
-    margin: 0px;
-    padding: 0px !important;
-    color: #eaeaea;
-    transition: color .25s;
-}
-
-.name-tag span{
-    font-family: "Quicksand";
-    font-size: .55em;
-    vertical-align: super;
+    align-self: flex-start;
 }
 
 .content-wrapper{
@@ -65,59 +49,46 @@ body *{
     align-items: center;
 }
 
+.content>section{
+    flex-basis:33.3333%;
+    display: flex;
+}
+
 .thumbnail{
+    align-self: center;
     z-index: 10;
     width: 200px;
     height: 200px;
-    border:10px solid #eaeaea;
     border-radius: 50%;
+    transition:border .5s;
+    border:5px solid #eaeaea;
     background: no-repeat center/100% url('/assets/images/salis.png') #eaeaea;
 }
 
 .about-me{
     position: relative;
-    width: 400px;
-    top: -35px;
+    width: 350px;
     height: auto;
     vertical-align: top;
     display: inline-block;
     padding: 10px;
     box-sizing: border-box;
-    border: 3px solid;
-    border-color: #eaeaea;
     color: #eaeaea;
     border-radius: 5px;
-    transition: border-color .25s,color .25s;
-    transition-delay: .25s;
+    align-self: flex-end;
 }
 
-.about-me::before,.about-me::after{
+.about-me svg{
     position: absolute;
-    content:"";
-    width: 0px;
-    height:0px;
-    display: block;
+    stroke-linecap: round;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
-.about-me::after{
-    bottom: -40px;
-    left: calc(50% - 20px);
-    border: 20px solid transparent;
-    border-top: 20px solid;
-    border-top-color: #eaeaea;
-    transition: border-top-color .25s;
-    transition-delay: .25s;
-}
-
-.about-me::before{
-    bottom: -35px;
-    left: calc(50% - 19px);
-    border: 19px solid transparent;
-    border-top: 19px solid;
-    border-top-color: #0e0f19;
-    transition: border-top-color .25s;
-    transition-delay: .35s;
-    z-index: 1;
+.about-me svg path{
+    transition:stroke .25s;
 }
 
 .about-me p{
@@ -135,6 +106,23 @@ body *{
     text-decoration: none;
 }
 
+.name-tag{
+    font-family:"Damion";
+    font-size: 1.5em;
+    font-weight: 100;
+    text-align: right;
+    margin: 0px;
+    padding: 0px 15px 15px 0 !important;
+    color: #eaeaea;
+    transition: color .25s;
+}
+
+.name-tag span{
+    font-family: "Quicksand";
+    font-size: .55em;
+    vertical-align: super;
+}
+
 .social-links{
     padding: 0;
     list-style: none;
@@ -144,6 +132,7 @@ body *{
     display: flex;
     align-items: baseline;
     justify-content: center;
+    margin-top: 0;
 }
 
 .social-links li{
@@ -200,12 +189,12 @@ li.social-links__linkedin{
     position: relative;
     z-index: 1;
     background-color: #98c1d9;
+    background-color: #eaeaea;
     min-width: 0;
     width: 0;
     height: 0;
     border-radius: 50%;
-    margin-top: 30px;
-    transition: width .75s,height .75s,z-index .25s,min-width .75s;
+    transition: width .75s,height .75s,z-index .25s,min-width .75s, background-color .25s ease .4s;
 }
 
   
@@ -301,6 +290,7 @@ body.light div.content--light{
     z-index: 3;
     min-width: 3000px;
     height: 3000px;
+    background-color: #98c1d9;
 }
 
 body.light .about-me{
@@ -312,14 +302,14 @@ body.light .name-tag{
     color: #0e0f19;
 }
 
-body.light .about-me::after{
-    border-top-color: #0e0f19;
-    transition-delay: .25s;
+body.light .about-me svg path{
+    stroke:#0e0f19;
+    transition:stroke .5s;
 }
 
-body.light .about-me::before{
-    border-top-color: #98c1d9;
-    transition-delay: 0s;
+body.light .thumbnail{
+    border: 5px solid #0e0f19;
+    transition-delay: .4s;
 }
 
 
@@ -333,7 +323,6 @@ body.light .about-me::before{
     }  
 }
 
-
 @media screen and (min-width: 0px) and (max-width : 320px){
     .about-me{
         position: relative;
@@ -343,6 +332,9 @@ body.light .about-me::before{
     .thumbnail{
         width: 110px;
         height: 110px;
-        border:5px solid #eaeaea;
+    }
+
+    body.light .thumbnail{
+        border: 5px solid #0e0f19;
     }
 }
