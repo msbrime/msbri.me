@@ -72,12 +72,11 @@ body *{
     display: block;
     top: 70px;
     left: calc(50% - 13px);
-    width:2px;
-    height:2px;
+    width:3px;
+    height:3px;
     display: block;
     background-color:black;
-    animation : blink 10s;
-    animation-delay: 5s;
+    animation : blink 60s;
     animation-iteration-count:infinite;
     animation-direction: alternate;
     transform-origin:center center;
@@ -360,6 +359,8 @@ body.light .thumbnail{
     .thumbnail::before,.thumbnail::after{
         top:46px;
         left: calc(50% - 9px);
+        width:2px;
+        height: 2px;
     }
 
     .thumbnail::after{
@@ -373,11 +374,23 @@ body.light .thumbnail{
 
   
 @keyframes blink{
-    0%,5%,10%,45%,50%,55%,80%,85%,100%{
+    0%, 13.25%, 15%, 31.25%,33%, 48.25%,
+    50%, 71.25%, 73%, 83.25%,85%, 100%{
         transform: scale(1,1);
     }
-    7.5%,47.5%,82.5%{
-        border-radius:0;
+    24%, 30%, 64%,70%{
+        transform: translateY(0);
+    }
+    24.5%, 29.5%{
+        transform: translateY(-2px);
+    }
+    64.5%, 69.5%{
+        transform: translateY(2px);
+    }
+    24.5%, 29.5%{
+        transform: translateY(-2px);
+    }
+    14%, 32%, 49%, 72%, 84%{
         transform: scale(1,0.05);
     }
 }
