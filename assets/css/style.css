@@ -75,7 +75,7 @@ body *{
     width:3px;
     height:3px;
     display: block;
-    background-color:black;
+    background-color:#18190d;
     animation : blink 60s;
     animation-iteration-count:infinite;
     animation-direction: alternate;
@@ -216,7 +216,11 @@ li.social-links__linkedin{
     width: 0;
     height: 0;
     border-radius: 50%;
-    transition: width .75s,height .75s,z-index .25s,min-width .75s, background-color .25s ease .4s;
+    transition: width .75s,
+        height .75s,
+        z-index .25s,
+        min-width .75s, 
+        background-color .25s ease .4s;
 }
 
   
