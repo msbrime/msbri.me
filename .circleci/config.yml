@@ -1,0 +1,56 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10.15.3
+    working_directory: ~/msbrime
+    steps:
+      - checkout
+      - run:
+          name: 'Install Dependencies'
+          command: |
+            echo Installing Dependencies
+            sudo npm install -g webpack webpack-cli
+            npm ci
+      - run:
+          name: 'Build Project'
+          command: webpack
+      - save_cache:
+          paths: 
+            - public
+          key: v1-build-{{ .Revision }}
+
+  deploy:
+    docker:
+      - image: circleci/node:10.15.3
+    working_directory: ~/msbrime
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-build-{{ .Revision }}
+      - run:
+          name: Deploy to Firebase Hosting
+          command: |
+            echo Commencing deploy to Firebase
+            sudo npm install -g firebase-tools
+            sudo firebase use $PROJECT_ID --token "${FIREBASE_TOKEN}"
+            sudo firebase deploy --token "${FIREBASE_TOKEN}" --only hosting 
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - master
+                - develop
+      - deploy:
+          requires: 
+            - build
+          filters:
+            branches:
+              only:
+                - master

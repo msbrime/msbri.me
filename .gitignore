@@ -5,3 +5,5 @@
 #/build
 /nbproject/private/
 .firebase/
+.firebaserc
+/public

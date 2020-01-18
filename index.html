@@ -12,7 +12,7 @@
     <meta property="og:description" content="A software engineer with a knack for collaborative problem solving and building beautiful user experiences" />
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Damion|Quicksand" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/main.css">
     <!-- Google Tag Manager -->
     <script>
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -78,19 +78,6 @@
         </div>
         <div class="content--light"></div>
     </div>
-
-    <script>
-        document.querySelector("#toggle")
-        .addEventListener("change",function(){
-            document.querySelector("body").classList.toggle("light")
-        })
-
-        var oReq = new XMLHttpRequest();
-        oReq.addEventListener("load", () => {
-          console.log(oReq.response);
-        });
-        oReq.open("GET", "/api/youtube/channel");
-        oReq.send();
-    </script>
+  <script src='assets/js/index.js'></script>
 </body>
 </html>

@@ -1,0 +1,41 @@
+{
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.3.2",
+    "extract-loader": "^3.1.0",
+    "fibers": "^4.0.2",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.13.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "parcel-bundler": "^1.12.4",
+    "postcss-loader": "^3.0.0",
+    "sass": "^1.23.7",
+    "sass-loader": "^8.0.0",
+    "terser-webpack-plugin": "^2.3.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "name": "msbrime.github.io",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "dependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msbrime/msbrime.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/msbrime/msbrime.github.io/issues"
+  },
+  "homepage": "https://github.com/msbrime/msbrime.github.io#readme",
+  "description": ""
+}
