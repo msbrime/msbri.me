@@ -5,6 +5,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const HtmlPlugin = require('html-webpack-plugin');
 
 const locations = {
   base: path.resolve(__dirname),
@@ -42,7 +43,12 @@ module.exports =
         test: /\.scss$/,
         exclude: /(node_modules)/,
 				use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ]
-			}
+      },
+      { 
+        test: /\.hbs$/, 
+        loader: "handlebars-loader",
+        exclude: /(node_modules)/
+      }
     ]
   },
   plugins: [
@@ -78,7 +84,24 @@ module.exports =
           return true;
         })
       }
-    }
+    },
+    new HtmlPlugin({
+      templateParameters: (compilation, assets, assetTags, options) => {
+        assets.js = assets.js.filter(asset => !asset.match(/css/))
+        return {
+          compilation,
+          webpackConfig: compilation.options,
+          htmlWebpackPlugin: {
+            tags: assetTags,
+            files: assets,
+            options
+          },
+          'title': 'Salis Braimah'
+        };
+      },
+      template: '!!handlebars-loader!assets/html/index/index.hbs',
+      minify: true
+    })
   ],
   devServer: {
     contentBase: locations.public,
