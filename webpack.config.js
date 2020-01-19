@@ -58,6 +58,10 @@ module.exports =
         to: locations.public
       },
       {
+        from: 'assets/html/pages/**/index.html',
+        to: locations.public
+      },
+      {
         from: 'assets/images/**/*.*',
         to: locations.public
       }
@@ -106,6 +110,7 @@ module.exports =
   devServer: {
     contentBase: locations.public,
     watchContentBase: true,
-    port: 3000
+    port: 3000,
+    historyApiFallback: true
   }
 }
