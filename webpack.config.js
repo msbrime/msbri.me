@@ -25,6 +25,7 @@ module.exports =
     'assets/css/main': locations.scss
   },
   output: {
+    publicPath: "/",
     path: locations.public
   },
   module: {

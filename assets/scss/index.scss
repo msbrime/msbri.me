@@ -54,6 +54,30 @@ body *{
   display: flex;
 }
 
+.content--youtube{
+  color: #fff;
+  flex-flow: row wrap;
+  overflow-y: auto;
+
+  &>section{
+    flex-basis:100%;
+  }
+
+  .playlists{
+    flex-wrap: wrap;
+    &--item{
+      padding: 10px;
+      flex-basis: 50%;
+      max-width: 50%;
+
+      img{
+        width: 100%;
+      }
+    }
+  }
+  
+}
+
 .thumbnail{
   position: relative;
   align-self: center;
@@ -302,6 +326,11 @@ li.social-links__linkedin{
       width: 48px;
   }
 }
+
+/******************
+*   YouTube       *
+*******************/
+
 
 
 /****************
