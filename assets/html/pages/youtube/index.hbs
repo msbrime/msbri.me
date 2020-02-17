@@ -1,0 +1,11 @@
+<div class="content content--youtube">
+  <section class="info">
+    <p style='color:white'>Welcome to {{channel.title}}</p>
+    <p style='color:white'>Playlists</p>
+  </section>
+  <section class="playlists">
+    {{#each playlists}}
+      {{> './partials/playlist'}}
+    {{/each}}
+  </section>
+</div>

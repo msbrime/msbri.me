@@ -1,4 +1,5 @@
 const routeParameterPattern = /:[^\s/]+/g;
+const defaultDataResolver = () => {}; 
 export default class Router{
   constructor(anchorNode, routeConfig){
     this.currentPath = '';
@@ -9,11 +10,13 @@ export default class Router{
 
   navigate(location){
     const matchedRoute = this.detectRoute(location.pathname);
-    const templatePath = this.routeConfig[matchedRoute.key].templatePath;
-    this.load(templatePath).then(template => {
-      this.anchorNode.innerHTML = template
-      this.routeConfig[matchedRoute.key].onload(matchedRoute.parameters);
-    })
+    const routeConfig = this.routeConfig[matchedRoute.key];
+    const dataResolver = routeConfig.dataResolver || defaultDataResolver;
+    Promise.resolve(dataResolver(matchedRoute.parameters))
+    .then(templateData => {
+      this.anchorNode.innerHTML = routeConfig.template(templateData)
+      routeConfig.onload(matchedRoute.parameters);
+    });
   }
 
   detectRoute(location){
@@ -32,13 +35,13 @@ export default class Router{
     }
     if(matchedRoute.key){
       matchedRoute.parameters = 
-        this.extractparameters(matchedRoute.key, location);
+        this.extractParameters(matchedRoute.key, location);
     }
     
     return matchedRoute;
   }
 
-  extractparameters(routePattern, url){
+  extractParameters(routePattern, url){
     const routeSegments = routePattern.split('/');
     const urlSegements = url.split('/');
     const parameters = {};
@@ -53,7 +56,4 @@ export default class Router{
     return parameters;
   }
 
-  load(template){
-    return fetch(template).then(response => response.text())
-  }
 }

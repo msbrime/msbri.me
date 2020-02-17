@@ -1,0 +1,11 @@
+<div class="content content--youtube-playlist">
+  <section class="info">
+    <p style='color:white'>{{title}}</p>
+    <img src={{thumbnail.url}} />
+  </section>
+  <section class="playlist">
+    {{#each videos}}
+      {{> '../partials/playlist.item.hbs'}}
+    {{/each}}
+  </section>
+</div>

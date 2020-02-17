@@ -2,58 +2,30 @@ import 'promise-polyfill/src/polyfill';
 import EventManager from "./events/manager";
 import Router from './router';
 import * as youtubeService from './services/youtube';
+import youtubeIndexTemplate from '../html/pages/youtube/index.hbs';
+import youtubePlaylistTemplate from '../html/pages/youtube/playlist/index.hbs';
+import homeTemplate from '../html/pages/home/index.hbs';
 
 let pageBody;
 
 const routeConfig = {
   '/': {
-    templatePath: '/assets/html/pages/home',
-    onload(){}
+    template: homeTemplate,
+    onload(template){
+    }
   },
   '/youtube':{
-    templatePath: '/assets/html/pages/youtube',
-    onload(){
-      youtubeService.channel().then(channelData => { 
-        const youtubePage = createYoutubePage(channelData);
-        pageBody.querySelector('.content--youtube>.playlists').replaceWith(youtubePage);
-      });
+    template: youtubeIndexTemplate,
+    dataResolver: youtubeService.channel,
+    onload(template){
     }
   },
   '/youtube/playlist/:[id]':{
-    templatePath: '/assets/html/pages/youtube/playlist',
-    onload(parameters){
-      youtubeService.playlist(parameters.id).then(playlistData => { 
-        console.log(playlistData);
-      });
+    template: youtubePlaylistTemplate,
+    dataResolver: parameters => youtubeService.playlist(parameters.id),
+    onload(template){
     }
   }
-}
-
-function createYoutubePlaylistItem(data){
-  return (`
-  <div class="playlists--item">
-    ${data.thumbnail ?
-      `<img src="${data.thumbnail.url}" alt="alt text">` :
-      `<img src="https://resources.construx.com/wp-content/uploads/2016/08/video-placeholder-brain-bites.png" alt="alt text">`
-    }
-    <p>
-      <a data-internal-link data-href="/youtube/playlist/${data.id}" target="_blank" href="https://www.youtube.com/channel/UCcBPAtdWxzHC_iRIyajuoFw">
-        ${data.title}
-      </a>
-    </p>
-    <p>${data.description}</p>
-  </div>
-  `);
-}
-
-// just creates the playlist items
-function createYoutubePage(youtubeData){
-  const pageFragment = document.createDocumentFragment();
-  const playlistNodeClone = document.querySelector('.content--youtube .playlists').cloneNode();
-  const playlistNodes = youtubeData.playlists.map(createYoutubePlaylistItem);
-  playlistNodeClone.innerHTML = playlistNodes.join('');
-  pageFragment.appendChild(playlistNodeClone);
-  return pageFragment;
 }
 
 function themeChangeHandler(event){
